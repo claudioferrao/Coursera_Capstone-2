@@ -1,0 +1,48 @@
+
+integrator		= md
+
+define			= -DPOSRES
+refcoord_scaling	= all
+
+constraints		= all-bonds
+nsteps			= 5000	; 10ps
+dt				= 0.002
+
+nstxout			= 0		; xyz	
+nstvout			= 0		; v		
+nstfout			= 0		; F		
+nstenergy			= 500	; E		1ps
+nstxout-compressed	= 0		; xtc	
+compressed-x-grps	= System
+
+nstlist			= 0
+rlist			= 0
+
+coulombtype		= cut-off
+rcoulomb			= 0
+cutoff-scheme		= group
+
+vdw-type			= cut-off
+rvdw 			= 0
+DispCorr			= no
+
+Tcoupl 			= v-rescale
+tc-grps 			= Protein
+tau-t			= 0.1
+ref-t			= 309.00
+nsttcouple		= 10
+
+energygrps		= Protein
+
+Pcoupl			= no
+pcoupltype		= isotropic
+tau_p	 		= 0.5
+compressibility	= 4.5e-5 
+ref_p			= 1.0 
+
+gen_vel			= yes 
+gen_temp			= 309.00
+gen_seed			= -1 
+
+pbc = no
+comm_mode = angular

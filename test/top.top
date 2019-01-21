@@ -1,0 +1,12 @@
+#include "amber14sb_parmbsc1.ff/forcefield.itp"
+
+#include "prp.itp"
+
+
+[ system ]
+; Name
+Globular domain of PrP in water
+
+[ molecules ]
+; Compound        #mols
+PrP                   1

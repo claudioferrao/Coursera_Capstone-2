@@ -1,0 +1,38 @@
+
+integrator		= md
+
+constraints		= all-bonds
+nsteps			= 50000	; 100ps
+dt				= 0.002
+
+nstxout			= 0		; xyz	
+nstvout			= 0		; v		
+nstfout			= 0		; F		
+nstenergy			= 500	; E		1ps
+nstxout-compressed	= 500	; xtc	1ps
+compressed-x-grps	= System
+
+nstlist			= 0
+rlist			= 0
+
+coulombtype		= cut-off
+rcoulomb			= 0
+cutoff-scheme		= group
+
+vdw-type			= cut-off
+rvdw 			= 0
+DispCorr			= no
+
+Tcoupl 			= nose-hoover
+tc-grps 			= Protein
+tau-t			= 1.0
+ref-t			= 309.00
+nsttcouple		= 10
+
+energygrps		= Protein
+
+Pcoupl			= no
+
+pbc = no
+
+comm_mode = angular
